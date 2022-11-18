@@ -26,7 +26,7 @@ class Booklist extends PureComponent {
 
         return (
             <>
-          <ul className="booklist flex">
+          <ul className="booklist">
       {myBooks.map((myBook) => <Book key={myBook.id} title={myBook.title} author={myBook.author} />)}
     </ul>
     <Bookform />
