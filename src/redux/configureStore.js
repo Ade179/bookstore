@@ -4,12 +4,9 @@ import checkStatusReducer from './categories/categories';
 import booksReducer from './books/books';
 
 const rootReducer = combineReducers({
-  Books: booksReducer,
-  Categories: checkStatusReducer,
+  books: booksReducer,
+  categories: checkStatusReducer,
 });
 
-const store = configureStore({
-  reducer: rootReducer,
-});
-
+const store = configureStore({ reducer: rootReducer });
 export default store;

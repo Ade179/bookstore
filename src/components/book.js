@@ -13,6 +13,7 @@ const Book = (props) => {
           by
           {author}
         </li>
+        <li>hfhfgf</li>
       </ul>
       <button className="rmv" type="submit">Remove</button>
     </div>
