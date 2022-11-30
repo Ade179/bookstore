@@ -1,12 +1,8 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 
-class Categories extends PureComponent {
-  render() {
-    return (
-      <>
-        <button className="checkstatus" type="button" name="buttton">Check Status</button>
-      </>
-    );
-  }
-}
+const Categories = () => (
+  <>
+    <button className="checkstatus" type="button" name="buttton">Check Status</button>
+  </>
+);
 export default Categories;
