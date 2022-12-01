@@ -1,19 +1,25 @@
 const ADD_BOOK = 'BOOKSTORE/book/ADD_BOOK';
 const REMOVE_BOOK = 'BOOKSTORE/book/REMOVE_BOOK';
 
-export const addBooks = (text) => ({
+export const addBooks = (payload) => ({
   type: ADD_BOOK,
-  payload: text,
+  payload,
 });
 
-export const removeBooks = (text) => ({
+export const removeBooks = (payload) => ({
   type: REMOVE_BOOK,
-  payload: text,
+  payload,
 });
 
 // reducers
 
-const initialState = [];
+const initialState = [{
+  id: '1',
+  title: 'Death And The king Horseman',
+  author: 'Wole Soyinka',
+  category: 'Tragedy',
+},
+];
 
 const booksReducer = (state = initialState, action) => {
   const { type, payload } = action;
