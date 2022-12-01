@@ -1,41 +1,36 @@
-const ADD_BOOK = 'bookstore/books/ADD_BOOK';
-const REMOVE_BOOK = 'bookstore/books/REMOVE_BOOK';
+const ADD_BOOK = 'BOOKSTORE/book/ADD_BOOK';
+const REMOVE_BOOK = 'BOOKSTORE/book/REMOVE_BOOK';
+
+export const addBooks = (payload) => ({
+  type: ADD_BOOK,
+  payload,
+});
+
+export const removeBooks = (payload) => ({
+  type: REMOVE_BOOK,
+  payload,
+});
 
 // reducers
 
-const books = [
-  {
-    id: '1',
-    title: 'Death And The KingsHorseman',
-    author: 'Prof. Wole Soyinka',
-
-  },
-  {
-    id: '2',
-    title: 'The Trials of Brother Jero',
-    author: 'Prof. Wole Soyinka',
-
-  },
+const initialState = [{
+  id: '1',
+  title: 'Death And The king Horseman',
+  author: 'Wole Soyinka',
+  category: 'Tragedy',
+},
 ];
 
-const booksReducer = (state = books, action) => {
-  switch (action.type) {
+const booksReducer = (state = initialState, action) => {
+  const { type, payload } = action;
+  switch (type) {
     case ADD_BOOK:
-      return [...state, action.books];
+      return [...state, payload];
     case REMOVE_BOOK:
-      return state.filter((book) => book.id !== action.id);
+      return state.filter((book) => book.id !== payload);
     default:
       return state;
   }
 };
-export const addBooks = (book) => ({
-  type: ADD_BOOK,
-  book,
-});
-
-export const removeBooks = (id) => ({
-  type: REMOVE_BOOK,
-  id,
-});
 
 export default booksReducer;
