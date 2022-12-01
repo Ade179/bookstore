@@ -21,7 +21,7 @@ const books = [
 const booksReducer = (state = books, action) => {
   switch (action.type) {
     case ADD_BOOK:
-      return [...state, action.book];
+      return [...state, action.books];
     case REMOVE_BOOK:
       return state.filter((book) => book.id !== action.id);
     default:
@@ -34,6 +34,7 @@ export const addBooks = (book) => ({
 });
 
 export const removeBooks = (id) => ({
+  type: REMOVE_BOOK,
   id,
 });
 
