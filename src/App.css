@@ -239,3 +239,6 @@ input {
   height: 50%;
 }
 
+.edit{
+  border-right: none;
+}
