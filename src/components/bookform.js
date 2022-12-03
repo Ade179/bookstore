@@ -26,14 +26,14 @@ const Bookform = () => {
   };
 
   return (
-    <>
+    <div className="addBook">
       <div className="booktext">ADD NEW BOOK</div>
       <form className="bookform" onSubmit={addHandler}>
-        <input type="text" name="title" placeholder="Book title" value={title} onChange={(e) => setTitle(e.target.value)} />
-        <input type="text" name="author" placeholder="author" value={author} onChange={(e) => setAuthor(e.target.value)} />
+        <input type="text" name="title" placeholder="Book title" value={title} onChange={(e) => setTitle(e.target.value)} className=" input title-input" />
+        <input type="text" name="author" placeholder="author" value={author} onChange={(e) => setAuthor(e.target.value)} className="input author-input" />
         <button className="newbook" type="submit">ADD BOOK</button>
       </form>
-    </>
+    </div>
   );
 };
 
